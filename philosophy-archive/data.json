@@ -1,0 +1,168 @@
+{
+  "philosophers": [
+    {
+      "id": "socrates",
+      "name": "Socrates",
+      "era": "c. 470–399 BCE",
+      "region": "Athens, Greece",
+      "school": "Classical Greek Philosophy",
+      "coordinates": [37.9838, 23.7275],
+      "biography": {
+        "summary": "Socrates of Athens was a foundational figure in Western philosophy, renowned for his refusal to write down his teachings, choosing instead to engage in dialectic cross-examination on the streets of Athens. He challenged the sophists and conventional wisdom, seeking universal definitions of virtues like justice, piety, and courage. His philosophical quest eventually provoked the suspicion of the Athenian democracy, leading to his trial, conviction, and execution by drinking hemlock.",
+        "timeline": [
+          { "year": "c. 470 BCE", "event": "Born in Athens to Sophroniscus (a stonemason) and Phaenarete (a midwife)." },
+          { "year": "c. 432–422 BCE", "event": "Distinguishes himself for physical courage and endurance during military service in the Peloponnesian War (Potidaea, Delium, and Amphipolis)." },
+          { "year": "c. 406 BCE", "event": "Serves on the Athenian council and single-handedly refuses to illegally try generals of Arginusae en masse." },
+          { "year": "399 BCE", "event": "Tried by an Athenian jury on charges of introducing new deities and corrupting the youth; refuses to recant and is executed." }
+        ]
+      },
+      "teachings": [
+        { "concept": "Socratic Method (Elenchus)", "explanation": "A cooperative argumentative dialogue to stimulate critical thinking and draw out underlying beliefs by asking continuous clarifying questions." },
+        { "concept": "Intellectual Midwifery", "explanation": "The view that the philosopher does not implant wisdom, but helps others bring forth their own latent truths, drawing on his mother's profession." },
+        { "concept": "Socratic Irony & Ignorance", "explanation": "The awareness of the limits of one's knowledge, summarized as 'I know that I know nothing.' True wisdom begins with admitting ignorance." }
+      ],
+      "major_works": [
+        {
+          "title": "The Apology",
+          "published": "c. 399 BCE",
+          "cover_color": "#4A1525",
+          "gist": "Socrates defends his philosophical mission before the Athenian court, refuting charges of impious corruption of the youth and explaining his divine calling from the Oracle of Delphi.",
+          "spoiler": "Rather than backing down to save his life, Socrates declares that 'the unexamined life is not worth living.' He accepts the death sentence, viewing death either as a dreamless sleep or a journey to converse with ancient heroes, asserting that no harm can come to a good man in life or death."
+        },
+        {
+          "title": "Crito",
+          "published": "c. 399 BCE",
+          "cover_color": "#1C3A27",
+          "gist": "Set in Socrates' prison cell, his wealthy friend Crito offers to bribe the guards to facilitate his escape. Socrates systematically questions whether escape is morally justifiable.",
+          "spoiler": "Socrates argues that fleeing would destroy the Laws of Athens which nurtured and protected him, violating a tacit social contract. He concludes that one must never return injury for injury, establishing that the duty to uphold justice overrides personal self-preservation."
+        }
+      ]
+    },
+    {
+      "id": "buddha",
+      "name": "Gautama Buddha",
+      "era": "c. 563–483 BCE",
+      "region": "Varanasi (Sarnath), India",
+      "school": "Buddhist Philosophy",
+      "coordinates": [25.3176, 82.9739],
+      "biography": {
+        "summary": "Siddhartha Gautama was a prince of the Shakya clan born in Lumbini, who renounced his luxurious palace life to discover a remedy for universal human suffering. After years of asceticism and meditation, he attained supreme enlightenment (Nirvana) under the Bodhi tree in Bodh Gaya. He spent the rest of his life traveling across ancient India, preaching the Dharma—a middle path between extreme asceticism and sensory indulgence.",
+        "timeline": [
+          { "year": "c. 563 BCE", "event": "Born as Prince Siddhartha in the royal gardens of Lumbini (modern-day Nepal)." },
+          { "year": "c. 534 BCE", "event": "Departs his palace at age 29, witnessing the 'Four Sights' (an old man, a sick man, a corpse, and an ascetic) and renouncing his birthright." },
+          { "year": "c. 528 BCE", "event": "Attains complete enlightenment under the Bodhi tree at age 35 and delivers his first sermon at Sarnath (Varanasi)." },
+          { "year": "c. 483 BCE", "event": "Passes into Parinirvana (final release) at Kushinagar, instructing his disciples to be lamps unto themselves." }
+        ]
+      },
+      "teachings": [
+        { "concept": "The Four Noble Truths", "explanation": "Life involves suffering (Dukkha), which originates from craving (Tanha); suffering can be ceased (Nirodha) by following the Noble Eightfold Path." },
+        { "concept": "Dependent Origination (Pratītyasamutpāda)", "explanation": "The principle that all phenomena arise in dependence upon multiple causes and conditions, meaning nothing exists in absolute isolation." },
+        { "concept": "Anatta (Non-Self)", "explanation": "The doctrine that there is no permanent, unchanging, independent soul or self in any living being, but rather a dynamic bundle of shifting processes." }
+      ],
+      "major_works": [
+        {
+          "title": "Dhammapada",
+          "published": "c. 3rd century BCE",
+          "cover_color": "#8A4F1B",
+          "gist": "A collection of 423 verses containing the ethical and psychological teachings of the Buddha, serving as a practical guide to mindful living and mental purity.",
+          "spoiler": "The verses assert that all experience is shaped by the mind; by conquering anger with love, greed with generosity, and illusion with wisdom, one dissolves the ego. This self-mastery breaks the attachment to worldly illusions and achieves the final tranquility of Nirvana."
+        },
+        {
+          "title": "Dhammacakkappavattana",
+          "published": "c. 528 BCE",
+          "cover_color": "#5A2C16",
+          "gist": "Known as the 'Setting in Motion the Wheel of Dharma' sermon, this is the foundational text detailing the Middle Way and the structure of human suffering.",
+          "spoiler": "It reveals that the Middle Way is not merely a compromise between extremes, but a radical shift in perspective. True liberation occurs when one directly experiences the impermanence of all things and extinguishes the three poisons: greed, hatred, and delusion."
+        }
+      ]
+    },
+    {
+      "id": "laozi",
+      "name": "Laozi",
+      "era": "c. 6th century BCE",
+      "region": "Luoyang, China",
+      "school": "Daoism (Taoism)",
+      "coordinates": [34.6200, 112.4540],
+      "biography": {
+        "summary": "Laozi ('Old Master') was a semi-legendary archivist of the royal court of Zhou in Luoyang. Disillusioned with the moral decay of society, he rode west on a water buffalo. At the Hangu Pass, the gatekeeper Yinxi recognized his wisdom and begged him to write down his teachings. Laozi obliged, writing a short text of 81 chapters before vanishing into the western wilderness, leaving behind the foundational text of Daoist philosophy.",
+        "timeline": [
+          { "year": "c. 571 BCE", "event": "Born in the state of Chu (according to Sima Qian's historical records)." },
+          { "year": "c. 520 BCE", "event": "Works as the keeper of the imperial archives for the Zhou Court in Luoyang, gaining access to ancient rituals and histories." },
+          { "year": "c. 518 BCE", "event": "Supposedly meets with a young Confucius, advising him to discard his rigid pride and ceremonial ambitions." },
+          { "year": "c. 500 BCE", "event": "Departs Luoyang for the west, penning the Daodejing at the request of the gatekeeper before disappearing." }
+        ]
+      },
+      "teachings": [
+        { "concept": "The Dao (The Way)", "explanation": "The indefinable, nameless source and guiding pattern of all existence, which flows naturally and nourishes the ten thousand things." },
+        { "concept": "Wu Wei (Effortless Action)", "explanation": "Aligning oneself with the natural flow of the Dao, acting without force, contrivance, or aggressive striving, like water flowing around obstacles." },
+        { "concept": "Ziran (Naturalness)", "explanation": "The quality of being natural, spontaneous, and true to one's own inherent nature, free from artificial social constructs." }
+      ],
+      "major_works": [
+        {
+          "title": "Daodejing",
+          "published": "c. 4th century BCE",
+          "cover_color": "#1F2E3A",
+          "gist": "A poetic masterpiece composed of 81 chapters offering guidance for personal self-cultivation, spiritual alignment, and wise governance through yielding.",
+          "spoiler": "Laozi declares that 'the Dao that can be spoken of is not the eternal Dao.' Ultimate truth cannot be categorized by language. By practicing absolute emptiness and quietude, one becomes like water—yielding, yet eroding the hardest obstacles, realizing that strength lies in weakness and being resides in non-being."
+        },
+        {
+          "title": "Classic of Virtue",
+          "published": "c. 4th century BCE",
+          "cover_color": "#3B3023",
+          "gist": "Focuses on the practical application of 'De' (virtue/power) in leadership, explaining how a ruler can govern without coercion.",
+          "spoiler": "The climax reveals that the ideal leader is one whose presence is barely known to the people. When the leader's work is successfully done with Wu Wei, the people declare: 'We did it ourselves.' Trusting natural order replaces all rigid morality and legalistic punishments."
+        }
+      ]
+    },
+    {
+      "id": "hypatia",
+      "name": "Hypatia of Alexandria",
+      "era": "c. 360–415 CE",
+      "region": "Alexandria, Egypt",
+      "school": "Neoplatonism",
+      "coordinates": [31.2001, 29.9187],
+      "biography": {
+        "summary": "Hypatia was an acclaimed mathematician, astronomer, and Neoplatonist philosopher in Alexandria, Egypt. The daughter of the mathematician Theon, she became the head of the Neoplatonic school in Alexandria, teaching students of all faiths. Renowned for her public lectures on Plato and Aristotle, her deep learning, and her political influence as a mediator, she became caught in a volatile conflict between the Roman Prefect Orestes and the Christian Bishop Cyril, resulting in her murder by a mob.",
+        "timeline": [
+          { "year": "c. 360 CE", "event": "Born in Alexandria, studying mathematics and astronomy under her father, Theon of Alexandria." },
+          { "year": "c. 400 CE", "event": "Appointed head of the Neoplatonic school in Alexandria, drawing students from across the Mediterranean." },
+          { "year": "c. 410 CE", "event": "Becomes a close political advisor to Orestes, the imperial Roman prefect of Egypt." },
+          { "year": "415 CE", "event": "Attacked and brutally assassinated by a mob of religious extremists during political and religious riots." }
+        ]
+      },
+      "teachings": [
+        { "concept": "Neoplatonic Ascent", "explanation": "The belief that mathematical study and philosophical contemplation purify the mind, allowing the soul to ascend to the divine 'One'." },
+        { "concept": "Cosmic Geometry", "explanation": "The view that mathematics is not just a tool, but the underlying structural language of the cosmos, mirroring the intelligence of the creator." },
+        { "concept": "Philosophical Tolerance", "explanation": "Promoting an open classroom where pagan, Jewish, and Christian students study side by side in search of transcendent truth." }
+      ],
+      "major_works": [
+        {
+          "title": "Commentary on Arithmetica",
+          "published": "c. 405 CE",
+          "cover_color": "#6F3E5E",
+          "gist": "A critical commentary on Diophantus' Arithmetica, introducing algebraic equations, new mathematical solutions, and astronomical calculations.",
+          "spoiler": "Through mathematical analysis of numbers, Hypatia demonstrates that numbers represent eternal, unalterable truths that exist outside of physical space and time. This serves as proof of the Neoplatonic soul's connection to a higher, immaterial realm of pure reality."
+        },
+        {
+          "title": "Commentary on Conics",
+          "published": "c. 410 CE",
+          "cover_color": "#2E4057",
+          "gist": "A detailed commentary on Apollonius' Conics, focusing on properties of parabolas, ellipses, and hyperbolas, and their application to astronomy.",
+          "spoiler": "She constructs a geometric proof showing that celestial bodies move along curved paths (foreshadowing elliptical orbits). This implies the sky is not a series of perfect spheres, but a dynamic, mathematical harmony of geometric curves, mapping the mind of the Cosmos."
+        }
+      ]
+    }
+  ],
+  "flashing_quotes": [
+    { "text": "The unexamined life is not worth living.", "author": "Socrates" },
+    { "text": "I know that I am intelligent, because I know that I know nothing.", "author": "Socrates" },
+    { "text": "He who knows, does not speak. He who speaks, does not know.", "author": "Laozi" },
+    { "text": "Nature does not hurry, yet everything is accomplished.", "author": "Laozi" },
+    { "text": "Your mind is everything. What you think you become.", "author": "Gautama Buddha" },
+    { "text": "To conquer oneself is a greater task than conquering others.", "author": "Gautama Buddha" },
+    { "text": "Reserve your right to think, for even to think wrongly is better than not to think at all.", "author": "Hypatia" },
+    { "text": "Life is an unfoldment, and the further we travel the more truth we can comprehend.", "author": "Hypatia" },
+    { "text": "Truth does not change because it is, or is not, believed by a majority of the people.", "author": "Giordano Bruno" },
+    { "text": "The mind is not a vessel to be filled, but a fire to be kindled.", "author": "Plutarch" }
+  ]
+}

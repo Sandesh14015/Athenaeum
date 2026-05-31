@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Global Philosophy Archive - An interactive 3D digital library of ancient and modern thinkers with map integrations and 3D CSS volume bookshelves.">
+  <title>The Global Philosophy Archive | 3D Antique Library</title>
+  
+  <!-- Google Fonts for Dark Academia Aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons for Antique Styling -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Leaflet.js Cartographic Styling and Engine -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Application Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 1. HERO ARCHIVE DASHBOARD -->
+  <header class="archive-header">
+    <!-- Top-anchored Quotes Banner -->
+    <div class="quotes-banner" id="quotes-banner" role="region" aria-label="Rotating Philosophical Quotes">
+      <span class="quote-text" id="quote-text">Loading wisdom from the archives...</span>
+      <span class="quote-author" id="quote-author"></span>
+    </div>
+    
+    <div class="header-main">
+      <div class="logo-area">
+        <i class="fa-solid fa-hourglass-start antique-logo-icon"></i>
+        <div class="title-wrapper">
+          <h1 class="main-title">The Global Philosophy Archive</h1>
+          <p class="main-subtitle">A Cartographic & 3D Antique Study Room</p>
+        </div>
+      </div>
+      
+      <!-- Unified Search & Navigation Bar -->
+      <div class="search-container">
+        <i class="fa-solid fa-feather-pointed search-icon"></i>
+        <input type="text" id="search-input" placeholder="Search by name, school, region, era..." autocomplete="off">
+        <button id="clear-search" class="clear-search-btn" title="Clear Search"><i class="fa-solid fa-xmark"></i></button>
+        <div id="search-dropdown" class="search-dropdown hidden"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Archive Content Split Layout -->
+  <main class="archive-body">
+    
+    <!-- LEFT PANEL: MAP, HUB DETAILS, & SEARCH RESULTS -->
+    <section class="left-panel">
+      <!-- 2. INTERACTIVE GLOBAL MAP -->
+      <div class="map-card">
+        <div class="card-header">
+          <span class="card-title-decor"><i class="fa-solid fa-compass"></i> Cartographic Hub Map</span>
+          <span class="map-hint">Click a gilded historical hub to gather regional thinkers</span>
+        </div>
+        <div id="map-container" class="map-container"></div>
+      </div>
+      
+      <!-- Side Cabinet for Local Hub Philosophers -->
+      <div class="hub-cabinet-card" id="hub-cabinet">
+        <div class="card-header">
+          <span class="card-title-decor"><i class="fa-solid fa-scroll"></i> Hub Directory: <span id="current-hub-name" class="highlight-gold">Global Map</span></span>
+        </div>
+        <div class="cabinet-content" id="cabinet-list">
+          <p class="empty-state">Select a golden marker on the map to list local thinkers, or explore via search above.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- RIGHT PANEL: THE DYNAMIC PHILOSOPHER PROFILE LEDGER -->
+    <section class="right-panel">
+      <div class="parchment-ledger" id="parchment-ledger">
+        <!-- Default State: Ledger Welcome Screen -->
+        <div id="ledger-welcome" class="ledger-welcome">
+          <div class="seal-container">
+            <i class="fa-solid fa-scroll large-seal-icon"></i>
+          </div>
+          <h2 class="welcome-title">Select a Thinker to Open the Ledger</h2>
+          <p class="welcome-narrative">
+            Welcome to the Global Philosophy Archive. Here you can explore ancient pathways of wisdom. Click a golden node on the celestial map to see regional philosophers, or type a concept into the feather quill search engine.
+          </p>
+          <div class="quick-links">
+            <h3 class="quick-title">Featured Thinkers</h3>
+            <div class="quick-grid">
+              <a href="#socrates" class="quick-link-btn"><i class="fa-solid fa-book-open"></i> Socrates</a>
+              <a href="#buddha" class="quick-link-btn"><i class="fa-solid fa-dharmachakra"></i> Gautama Buddha</a>
+              <a href="#laozi" class="quick-link-btn"><i class="fa-solid fa-yin-yang"></i> Laozi</a>
+              <a href="#hypatia" class="quick-link-btn"><i class="fa-solid fa-star-and-crescent"></i> Hypatia</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Active State: Philosopher Profile Container (Populated via JS) -->
+        <div id="ledger-active" class="ledger-active hidden">
+          <!-- Profile Header info -->
+          <div class="profile-header">
+            <div class="profile-meta">
+              <span class="profile-school" id="p-school">School of Thought</span>
+              <span class="profile-era" id="p-era">c. Era Date</span>
+            </div>
+            <h2 class="profile-name" id="p-name">Philosopher Name</h2>
+            <p class="profile-region"><i class="fa-solid fa-location-dot"></i> <span id="p-region">Geographic Region</span></p>
+            <hr class="antique-separator">
+          </div>
+
+          <!-- Section: Biography and Timeline -->
+          <div class="profile-section-split">
+            <div class="bio-column">
+              <h3 class="section-title"><i class="fa-solid fa-book-open-reader"></i> Life & Narrative</h3>
+              <p class="bio-text" id="p-bio-summary">Narrative biography...</p>
+            </div>
+            
+            <div class="timeline-column">
+              <h3 class="section-title"><i class="fa-solid fa-timeline"></i> Historical Chronology</h3>
+              <div class="timeline-wrapper" id="p-timeline">
+                <!-- Timeline items injected here -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Teachings -->
+          <div class="teachings-section">
+            <h3 class="section-title"><i class="fa-solid fa-fire-burner"></i> Core Philosophies & Teachings</h3>
+            <div class="teachings-grid" id="p-teachings">
+              <!-- Teachings cards injected here -->
+            </div>
+          </div>
+
+          <!-- 3. INTERACTIVE 3D PHILOSOPHER PROFILES & BOOKSHELVES -->
+          <div class="bookshelf-section">
+            <h3 class="section-title"><i class="fa-solid fa-landmark"></i> The 3D Antique Bookshelf</h3>
+            <p class="bookshelf-subtitle">Hover over a volume to rotate the binding and view the text's details.</p>
+            <div class="bookshelf-container" id="p-bookshelf">
+              <!-- CSS 3D Books and content injected here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="archive-footer">
+    <p>&copy; 2026 Global Philosophy Archive. Created with Dark Academia aesthetics. Powered by Leaflet.js & Vanilla CSS3 3D Transforms.</p>
+  </footer>
+
+  <!-- Application Controller -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
