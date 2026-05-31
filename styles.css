@@ -676,6 +676,13 @@ body {
   animation: fade-in-up 0.5s ease-out;
 }
 
+.profile-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 24px;
+  align-items: center;
+}
+
 .profile-meta {
   display: flex;
   justify-content: space-between;
@@ -702,6 +709,288 @@ body {
 .profile-region i {
   color: #a08453;
   margin-right: 4px;
+}
+
+/* Interactive CSS philosopher sculpture */
+.philosopher-model-card {
+  background: rgba(44, 37, 30, 0.06);
+  border: 1px solid rgba(140, 118, 92, 0.36);
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+}
+
+.model-label {
+  color: #725e49;
+  font-family: var(--font-serif-display);
+  font-size: 0.62rem;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.model-label i {
+  color: #a08453;
+  margin-right: 3px;
+}
+
+.model-stage {
+  height: 190px;
+  display: grid;
+  place-items: center;
+  perspective: 700px;
+  cursor: grab;
+  overflow: hidden;
+  outline: none;
+}
+
+.model-stage:focus-visible {
+  box-shadow: inset 0 0 0 2px rgba(140, 118, 92, 0.65);
+}
+
+.philosopher-bust {
+  --model-turn: -12deg;
+  --model-tilt: 2deg;
+  --stone-light: #d8ccb4;
+  --stone-mid: #ad9b81;
+  --stone-dark: #675848;
+  width: 148px;
+  height: 176px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--model-tilt)) rotateY(var(--model-turn));
+  transition: transform 180ms ease-out;
+}
+
+.bust-head,
+.bust-neck,
+.bust-shoulders,
+.bust-pedestal,
+.bust-hair,
+.bust-ear,
+.bust-nose,
+.bust-beard {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.bust-head {
+  width: 67px;
+  height: 83px;
+  top: 19px;
+  left: 41px;
+  z-index: 5;
+  border-radius: 48% 48% 42% 42% / 43% 43% 56% 56%;
+  background:
+    radial-gradient(circle at 65% 42%, rgba(255,255,255,0.36), transparent 20%),
+    linear-gradient(100deg, var(--stone-dark), var(--stone-light) 38%, var(--stone-mid) 78%);
+  box-shadow:
+    inset -8px -5px 10px rgba(60, 47, 34, 0.2),
+    inset 7px 0 8px rgba(255,255,255,0.18),
+    4px 5px 8px rgba(44, 37, 30, 0.26);
+  transform: translateZ(17px);
+}
+
+.bust-neck {
+  width: 31px;
+  height: 40px;
+  top: 89px;
+  left: 59px;
+  z-index: 3;
+  background: linear-gradient(90deg, var(--stone-dark), var(--stone-light), var(--stone-mid));
+  transform: translateZ(8px);
+}
+
+.bust-shoulders {
+  width: 131px;
+  height: 62px;
+  top: 108px;
+  left: 9px;
+  z-index: 2;
+  border-radius: 58% 58% 8px 8px / 72% 72% 8px 8px;
+  background:
+    linear-gradient(155deg, transparent 42%, rgba(81, 66, 52, 0.2) 43%, transparent 47%),
+    linear-gradient(30deg, transparent 52%, rgba(255,255,255,0.16) 53%, transparent 57%),
+    linear-gradient(100deg, var(--stone-dark), var(--stone-light) 45%, var(--stone-mid));
+  box-shadow: inset 0 -10px 10px rgba(67, 52, 38, 0.28), 4px 5px 8px rgba(44, 37, 30, 0.22);
+  transform: translateZ(2px);
+}
+
+.bust-pedestal {
+  width: 112px;
+  height: 28px;
+  left: 18px;
+  bottom: 0;
+  z-index: 8;
+  display: grid;
+  place-items: center;
+  border-top: 4px solid #d6c8ae;
+  border-radius: 2px;
+  color: #4b3e34;
+  background: linear-gradient(90deg, #7c6b56, #c9baa0 48%, #8c7a63);
+  box-shadow: 0 5px 7px rgba(44, 37, 30, 0.26);
+  transform: translateZ(8px);
+}
+
+.bust-pedestal span {
+  max-width: 100px;
+  overflow: hidden;
+  font-family: var(--font-serif-display);
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.bust-hair-back {
+  width: 77px;
+  height: 66px;
+  top: 13px;
+  left: 36px;
+  z-index: 4;
+  border-radius: 50% 50% 35% 35%;
+  background: linear-gradient(100deg, #71624f, #a18f75 55%, #594b3e);
+  transform: translateZ(9px);
+}
+
+.bust-hair-front {
+  width: 64px;
+  height: 25px;
+  top: -5px;
+  left: 1px;
+  border-radius: 50% 50% 28% 28%;
+  background: repeating-radial-gradient(circle at 12px 12px, #786852 0 4px, #9e8d73 5px 7px);
+  transform: translateZ(6px);
+}
+
+.bust-ear {
+  width: 12px;
+  height: 24px;
+  top: 32px;
+  border-radius: 50%;
+  background: var(--stone-mid);
+}
+
+.bust-ear-left {
+  left: -7px;
+  transform: translateZ(-2px);
+}
+
+.bust-ear-right {
+  right: -7px;
+  transform: translateZ(-2px);
+}
+
+.bust-brow,
+.bust-eye,
+.bust-mouth {
+  position: absolute;
+  z-index: 2;
+  background: rgba(71, 59, 47, 0.62);
+}
+
+.bust-brow {
+  width: 16px;
+  height: 3px;
+  top: 31px;
+  border-radius: 50%;
+}
+
+.bust-brow-left,
+.bust-eye-left {
+  left: 11px;
+}
+
+.bust-brow-right,
+.bust-eye-right {
+  right: 11px;
+}
+
+.bust-eye {
+  width: 11px;
+  height: 4px;
+  top: 38px;
+  border-radius: 50%;
+}
+
+.bust-nose {
+  width: 12px;
+  height: 24px;
+  top: 38px;
+  left: 28px;
+  z-index: 3;
+  border-radius: 50% 50% 44% 44%;
+  background: linear-gradient(90deg, #8f7e67, var(--stone-light));
+  box-shadow: 3px 2px 3px rgba(70, 55, 42, 0.26);
+  transform: translateZ(10px);
+}
+
+.bust-mouth {
+  width: 23px;
+  height: 3px;
+  top: 67px;
+  left: 22px;
+  border-radius: 50%;
+}
+
+.bust-beard {
+  width: 57px;
+  height: 47px;
+  top: 57px;
+  left: 5px;
+  border-radius: 30% 30% 50% 50%;
+  background: repeating-radial-gradient(circle at 9px 5px, #786852 0 3px, #9e8d73 4px 6px);
+  opacity: 0.88;
+  transform: translateZ(3px);
+}
+
+.model-hint {
+  color: #80705d;
+  font-size: 0.72rem;
+  font-style: italic;
+}
+
+/* Individual archive bust treatments */
+.model-buddha .bust-hair-front,
+.model-buddha .bust-hair-back {
+  background: repeating-radial-gradient(circle at 8px 8px, #756650 0 3px, #9c8b71 4px 6px);
+}
+
+.model-buddha .bust-beard,
+.model-hypatia .bust-beard {
+  display: none;
+}
+
+.model-buddha .bust-head {
+  border-radius: 50% 50% 45% 45% / 48% 48% 54% 54%;
+}
+
+.model-laozi .bust-beard {
+  height: 58px;
+}
+
+.model-laozi .bust-hair-back {
+  height: 91px;
+}
+
+.model-hypatia .bust-hair-back {
+  width: 84px;
+  height: 91px;
+  left: 32px;
+  background: linear-gradient(100deg, #665746, #a18f75 55%, #594b3e);
+}
+
+.model-hypatia .bust-hair-front {
+  border-radius: 70% 35% 36% 30%;
+  background: linear-gradient(130deg, #786852, #a8977b);
+}
+
+.model-hypatia .bust-shoulders {
+  background:
+    linear-gradient(145deg, transparent 43%, rgba(81, 66, 52, 0.3) 44%, transparent 48%),
+    linear-gradient(35deg, transparent 48%, rgba(255,255,255,0.15) 49%, transparent 53%),
+    linear-gradient(100deg, var(--stone-dark), var(--stone-light) 45%, var(--stone-mid));
 }
 
 .antique-separator {
@@ -1257,6 +1546,16 @@ body {
   .profile-section-split {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .profile-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .philosopher-model-card {
+    max-width: 250px;
+    justify-self: center;
+    width: 100%;
   }
   
   .bookshelf-row {

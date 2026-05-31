@@ -54,6 +54,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     // Init Search Controls
     initSearch();
+
+    // Init interactive CSS sculpture
+    initPhilosopherModel();
     
     // Init Router (Hash Change listener)
     window.addEventListener("hashchange", handleRouting);
@@ -94,6 +97,30 @@ function initQuoteRotator() {
 function setQuote(quoteObj) {
   document.getElementById("quote-text").innerText = `"${quoteObj.text}"`;
   document.getElementById("quote-author").innerText = quoteObj.author;
+}
+
+// Adds pointer-driven rotation to the CSS archive bust.
+function initPhilosopherModel() {
+  const stage = document.getElementById("p-model-stage");
+  const model = document.getElementById("p-model");
+  if (!stage || !model) return;
+
+  const resetModel = () => {
+    model.style.setProperty("--model-turn", "-12deg");
+    model.style.setProperty("--model-tilt", "2deg");
+  };
+
+  stage.addEventListener("pointermove", event => {
+    const rect = stage.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    model.style.setProperty("--model-turn", `${x * 48}deg`);
+    model.style.setProperty("--model-tilt", `${y * -18}deg`);
+  });
+
+  stage.addEventListener("pointerleave", resetModel);
+  stage.addEventListener("blur", resetModel);
+  resetModel();
 }
 
 // 5. INTERACTIVE MAP CONTROLLER
@@ -249,6 +276,8 @@ function renderProfile(p) {
   document.getElementById("p-school").innerText = p.school;
   document.getElementById("p-era").innerText = p.era;
   document.getElementById("p-region").innerText = p.region;
+  document.getElementById("p-model-name").innerText = p.name;
+  document.getElementById("p-model").className = `philosopher-bust model-${p.id}`;
   
   // Narrative Biography
   document.getElementById("p-bio-summary").innerText = p.biography?.summary || "No biography has been cataloged yet.";
